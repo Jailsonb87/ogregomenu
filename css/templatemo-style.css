@@ -196,7 +196,7 @@ ul, nav, body, h1, h2, h4, h6, p, figure {
   body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 17px;
-    background-color: #0216c9;
+    background-color: #04049B;
     overflow-x: hidden;
   }
   
@@ -214,13 +214,13 @@ ul, nav, body, h1, h2, h4, h6, p, figure {
   .placeholder {
     width: 100%;
     min-height: 460px;
-    background-color: #556E5B;
+    background-color: #04049B;
   }
   
   .placeholder-2 {
     width: 100%;
     min-height: 220px;
-    background-color: #CFBEA5;
+    background-color: #04049B;
     position: relative;
     z-index: 998;
   }
@@ -271,9 +271,9 @@ ul, nav, body, h1, h2, h4, h6, p, figure {
     
     width: 50%;
   }
-  
-  
-  
+
+
+
   
   .tm-nav {
     text-align: right;
@@ -413,7 +413,7 @@ ul, nav, body, h1, h2, h4, h6, p, figure {
   .tm-paging-item {
     list-style: none;
     display: inline-block;
-    border: 1px solid #2F956D;
+    border: 1px solid #04049B;
     margin: 7px;
   }
   
@@ -423,13 +423,13 @@ ul, nav, body, h1, h2, h4, h6, p, figure {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    color: #2F956D;
+    color: #04049B;
     background-color: transparent;
   }
   
   .tm-paging-link.active,
   .tm-paging-link:hover {
-    background-color: #2F956D;
+    background-color: #04049B;
     color: white;
   }
   
