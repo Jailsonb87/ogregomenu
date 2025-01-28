@@ -48,13 +48,13 @@ https://templatemo.com/tm-539-simple-house
 			<div class="tm-paging-links">
 				<nav>
 					<ul>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link active">Starters</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Salads</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Kids</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Main-dishes</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Combos</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Deserts</a></li>
-						<li class="tm-paging-item"><a href="#" class="tm-paging-link">Drinks</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link active" data-category="starters">Starters</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="salads">Salads</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="kids">Kids</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="main-dishes">Main-dishes</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="combos">Combos</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="desserts">Deserts</a></li>
+						<li class="tm-paging-item"><a href="#" class="tm-paging-link" data-category="drinks">Drinks</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -358,18 +358,47 @@ https://templatemo.com/tm-539-simple-house
 	<script src="js/jquery.min.js"></script>
 	<script src="js/parallax.min.js"></script>
 	<script>
-		$(document).ready(function(){
-			// Handle click on paging links
-			$('.tm-paging-link').click(function(e){
-				e.preventDefault();
-				
-				var page = $(this).text().toLowerCase();
-				$('.tm-gallery-page').addClass('hidden');
-				$('#tm-gallery-page-' + page).removeClass('hidden');
-				$('.tm-paging-link').removeClass('active');
-				$(this).addClass("active");
-			});
-		});
+			$(document).ready(function(){
+
+    // Handle click on paging links
+
+    $('.tm-paging-link').click(function(e){
+
+        e.preventDefault();
+
+        
+
+        // Obter o valor do data-category do link clicado
+
+        var category = $(this).data('category');
+
+        
+
+        // Ocultar todas as páginas
+
+        $('.tm-gallery-page').addClass('hidden');
+
+        
+
+        // Mostrar a página correspondente à categoria clicada
+
+        $('#tm-gallery-page-' + category).removeClass('hidden');
+
+        
+
+        // Remover a classe 'active' de todos os links
+
+        $('.tm-paging-link').removeClass('active');
+
+        
+
+        // Adicionar a classe 'active' ao link clicado
+
+        $(this).addClass('active');
+
+    });
+
+});
 	</script>
 </body>
 </html>
