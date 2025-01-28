@@ -7,6 +7,59 @@
     <title>OGREGO - MENU</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />    
 	<link href="css/templatemo-style.css" rel="stylesheet" />
+	<style>
+		.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  transition: transform 0.3s ease;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#zoomControls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+#zoomControls button {
+  background: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#zoomControls button:hover {
+  background: #ddd;
+}
+	</style>
 </head>
 <!--
 
@@ -61,18 +114,19 @@ https://templatemo.com/tm-539-simple-house
 
 			<!-- Gallery -->
 			<div class="row tm-gallery">
+
+				<div id="imageModal" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" id="modalImg" />
+					<div id="zoomControls">
+					  <button id="zoomIn">+</button>
+					  <button id="zoomOut">-</button>
+					</div>
+				  </div>
+
+
 				<!-- gallery page 1 -->
 				<div id="tm-gallery-page-starters" class="tm-gallery-page">
-					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
-						<figure>
-							<img src="img/homus.jpg" alt="Image" class="img-fluid tm-gallery-img" />
-							<figcaption>
-								<h4 class="tm-gallery-title">Homus</h4>
-								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
-								<p class="tm-gallery-price">$65 / $70</p>
-							</figcaption>
-						</figure>
-					</article>
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
 							<img src="img/taramas.jpg" alt="Image" class="img-fluid tm-gallery-img" />
@@ -92,7 +146,7 @@ https://templatemo.com/tm-539-simple-house
 								<p class="tm-gallery-price">$25.50</p>
 							</figcaption>
 						</figure>
-					</article>
+					</article>					
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
 							<img src="img/melintzano-salata.jpg" alt="Image" class="img-fluid tm-gallery-img" />
@@ -105,12 +159,32 @@ https://templatemo.com/tm-539-simple-house
 					</article>
 					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
 						<figure>
+							<img src="img/homus.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">Homus</h4>
+								<p class="tm-gallery-description">Nam in suscipit nisi, sit amet consectetur metus. Ut sit amet tellus accumsan</p>
+								<p class="tm-gallery-price">$65 / $70</p>
+							</figcaption>
+						</figure>
+					</article>					
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
 							<img src="img/tetralogia.jpg" alt="Image" class="img-fluid tm-gallery-img" />
 							<figcaption>
 								<h4 class="tm-gallery-title">TETRALOGIA </h4>
 								<p class="tm-gallery-description">A combination of the 4 traditional Greek spreads (Tarama, Tzatziki, melitzanosalata, Hommus
 									) served with Greek breads</p>
 								<p class="tm-gallery-price">$20 / $40 / $60</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/haloumi-grelhado.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">HALOUMI ON THE GRILL</h4>
+								<p class="tm-gallery-description">Greek Haloumi cheese and tomatoes grilled, served with arugula, olive oil and oregano.</p>
+								<p class="tm-gallery-price">$15</p>
 							</figcaption>
 						</figure>
 					</article>
@@ -130,6 +204,66 @@ https://templatemo.com/tm-539-simple-house
 							<figcaption>
 								<h4 class="tm-gallery-title">FETA ME MELI</h4>
 								<p class="tm-gallery-description">Fried feta cheese puffs served with honey and sesame seeds.</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/keftedakia2.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">KEFTEDAKIA</h4>
+								<p class="tm-gallery-description">Ground beef dumplings, onion, garlic, parsley, mint, breadcrumbs, tzatzki sauce and tomato.</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/melintzano-gemista.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">MELINTZANA GEMISTI</h4>
+								<p class="tm-gallery-description">Eggplant stuffed with onion, tomato, garlic and bay leaf.</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/htapodi-salata-2.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">HTAPODI SALATA</h4>
+								<p class="tm-gallery-description">Grilled octopus served with greek dressing (olive oil, vinegar and herbs)</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/tartare-salmão.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">SOLOMOS TARTARE</h4>
+								<p class="tm-gallery-description">Salmon tartare, avocado, olive oil, lemon and dill.</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/kalamari-tiganito.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">KALAMARI TIGANITO</h4>
+								<p class="tm-gallery-description">Fried squid served with olive oil and lemon sauce</p>
+								<p class="tm-gallery-price">$15</p>
+							</figcaption>
+						</figure>
+					</article>
+					<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item">
+						<figure>
+							<img src="img/htapodi-fava.jpg" alt="Image" class="img-fluid tm-gallery-img" />
+							<figcaption>
+								<h4 class="tm-gallery-title">HTAPODI FAVA</h4>
+								<p class="tm-gallery-description">Grilled octopus served with Fava puree.</p>
 								<p class="tm-gallery-price">$15</p>
 							</figcaption>
 						</figure>
@@ -399,6 +533,53 @@ https://templatemo.com/tm-539-simple-house
     });
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const closeBtn = document.querySelector(".close");
+  const zoomInBtn = document.getElementById("zoomIn");
+  const zoomOutBtn = document.getElementById("zoomOut");
+
+  let zoomLevel = 1;
+
+  // Abrir modal ao clicar na imagem
+  document.querySelectorAll(".tm-gallery-img").forEach((img) => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      zoomLevel = 1; // Resetar zoom ao abrir nova imagem
+      modalImg.style.transform = `scale(${zoomLevel})`;
+    });
+  });
+
+  // Fechar modal
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Fechar modal ao clicar fora da imagem
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Zoom in
+  zoomInBtn.addEventListener("click", () => {
+    zoomLevel += 0.1;
+    modalImg.style.transform = `scale(${zoomLevel})`;
+  });
+
+  // Zoom out
+  zoomOutBtn.addEventListener("click", () => {
+    if (zoomLevel > 0.1) {
+      zoomLevel -= 0.1;
+      modalImg.style.transform = `scale(${zoomLevel})`;
+    }
+  });
+});
+
 	</script>
 </body>
 </html>
